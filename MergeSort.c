@@ -31,3 +31,24 @@ while(r<k){
     r++;
         }
     }
+void mergesort(int a[], int low,int high){
+int mid;
+if(low<high){
+    mid =(high+low)/2;
+    mergesort(a, low,mid);
+    mergesort(a, mid+1,high);
+    merge(a,low,mid, high);
+        }
+    }
+main(){
+int a[100],n,i;
+printf("enter array size: ");
+scanf("%d",&n);
+printf("enter element: ");
+for(i=0; i<n; i++)
+    scanf("%d", &a[i]);
+    mergesort(a,0,n-1);
+    printf("sort array are:");
+    for(i=0;i<n;i++)
+        printf(" %d",a[i]);
+}
